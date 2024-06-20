@@ -1,0 +1,53 @@
+﻿@model IEnumerable<RetoMVC.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Nuevo departamento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Fecha Modificacion
+            </th>
+            <th>
+                Fecha creacion
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartamentoCodigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartamentoNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraCrea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaHoraModifica)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <!-- Este es un comentario en HTML 
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    -->
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

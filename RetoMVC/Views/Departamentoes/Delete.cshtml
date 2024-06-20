@@ -1,0 +1,42 @@
+﻿@model RetoMVC.Models.Departamento
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Seguro quieres eliminar el siguiente registro?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Codigo:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DepartamentoCodigo)
+        </dd>
+        <dt class = "col-sm-2">
+            Nombre:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DepartamentoNombre)
+        </dd>
+        <dt class = "col-sm-2">
+            Fecha modificacion
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaHoraCrea)
+        </dd>
+        <dt class = "col-sm-2">
+            Fecha Creacion
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaHoraModifica)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver</a>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1>Descripción de RETO</h1>
+    <p>Crear un aplicativo Web para administrar empleados y departamentos, el cual debe ser desarrollado en C#, teniendo en cuenta las siguientes condiciones.</p>
+    <ol>
+        <li>Acceso a BD con SQL Server</li>
+        <li>Los datos deben guardarse en una base de datos relacionales</li>
+        <li>Deber ser Aplicación Web ASP .NET Core</li>
+    </ol>
+    <p>El modelo de dominio consta de departamentos y empleados, cada departamento puede tener muchos empleados y un empleado puede pertenecer a un solo departamento.</p>
+    <p>Usted es libre de escoger los tipos de datos para campo, pero tener en cuenta que los datos señalados con * son requeridos y que la fecha “fecha_hora_crea” hace relación a la fecha de creación del registro y la de “fecha_hora_modifica” se debe registrar cada que se realice una actualización.</p>
+    <p>A continuación, se detalla la información requerida.</p>
+    <h2>Departamentos</h2>
+    <ul>
+        <li>id (autoincremental, deshabilitado en el formulario)</li>
+        <li>departamento_codigo *</li>
+        <li>departamento_nombre *</li>
+        <li>fecha_hora_crea (Solo visual)</li>
+        <li>fecha_hora_modifica (Solo visual)</li>
+    </ul>
+    <h2>Empleados</h2>
+    <ul>
+        <li>id (autoincremental, deshabilitado en el formulario)</li>
+        <li>documento_tipo (RC, TI, CC, CE) *</li>
+        <li>documento_numero *</li>
+        <li>nombres *</li>
+        <li>apellidos *</li>
+        <li>departamentos_id (Relación) *</li>
+        <li>ciudad *</li>
+        <li>dirección *</li>
+        <li>correo_electrónico *</li>
+        <li>teléfono *</li>
+        <li>fecha_hora_crea (Solo visual)</li>
+        <li>fecha_hora_modifica (Solo visual)</li>
+    </ul>
+    <p>La aplicación debe exponer dos vistas (empleados y departamentos) en los cuales deben realizarse de entrada una lista de registros, con las opciones básicas de un CRUD (Crear, Ver, Editar y Borrar).</p>
+</div>
