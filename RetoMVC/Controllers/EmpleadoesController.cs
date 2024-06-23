@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -60,15 +59,11 @@ namespace RetoMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,DocumentoTipo,DocumentoNumero,Nombres,Apellidos,Ciudad,Direccion,CorreoElectronico,Telefono,FechaHoraCrea,FechaHoraModifica,DepartamentoId")] Empleado empleado)
         {
-
-            if (ModelState.IsValid)
-            {
+            
                 _context.Add(empleado);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            };
-            ViewData["DepartamentoId"] = new SelectList(_context.departamentos, "Id", "Id", empleado.DepartamentoId);
-            return View(empleado);
+   
         }
 
         // GET: Empleadoes/Edit/5
@@ -93,15 +88,14 @@ namespace RetoMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,DocumentoTipo,DocumentoNumero,Nombres,Apellidos,Ciudad,Direccion,CorreoElectronico,Telefono,FechaHoraCrea,FechaHoraModifica,DepartamentoId")] Empleado empleado)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,DocumentoTipo,DocumentoNumero,Nombres,Apellidos,Ciudad,Direccion,CorreoElectronico,Telefono,FechaHoraCrea,DepartamentoId")] Empleado empleado)
         {
             if (id != empleado.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+            
                 try
                 {
                     _context.Update(empleado);
@@ -119,9 +113,8 @@ namespace RetoMVC.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["DepartamentoId"] = new SelectList(_context.departamentos, "Id", "Id", empleado.DepartamentoId);
-            return View(empleado);
+            
+ 
         }
 
         // GET: Empleadoes/Delete/5

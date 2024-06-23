@@ -16,9 +16,9 @@ namespace RetoMVC.Services
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Departamento>()
-                .HasOne(e => e.EmpleadoRef)
+                .HasMany(e => e.Empleados)
                 .WithOne(e => e.Departamento)
-                .HasForeignKey<Empleado>(e => e.DepartamentoId)
+                .HasForeignKey(e => e.DepartamentoId)
                 .IsRequired();
         }
     }

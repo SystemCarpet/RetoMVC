@@ -5,7 +5,7 @@
 }
 
 <p>
-    <a asp-action="Create">Nuevo empleado</a>
+    <a asp-action="Create">Nuevo Empleado</a>
 </p>
 <table class="table">
     <thead>
@@ -14,7 +14,7 @@
                 Tipo Documento
             </th>
             <th>
-               Numero Documento
+                Numero
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombres)
@@ -35,17 +35,18 @@
                 @Html.DisplayNameFor(model => model.Telefono)
             </th>
             <th>
-                Fecha Creacion
+               Fecha Creacion
             </th>
             <th>
-                Fecha Modificacion
+               Fecha Modificacion
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Departamento)
             </th>
-            <th>Tienpo Contradado</th>
+            <th>
+                Tiempo contratado
+            </th>
             <th></th>
-           
         </tr>
     </thead>
     <tbody>
@@ -85,12 +86,10 @@
                 @Html.DisplayFor(modelItem => item.Departamento.DepartamentoNombre)
             </td>
             <td>
-                 
                     @Html.DisplayFor(modelItem => item.DiasTrabajados)
-
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                 <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>

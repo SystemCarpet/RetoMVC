@@ -1,5 +1,6 @@
 
 
+using Microsoft.Extensions.Hosting;
 using System.Reflection.Metadata;
 
 namespace RetoMVC.Models
@@ -14,7 +15,7 @@ namespace RetoMVC.Models
         public DateTime FechaHoraCrea { get; set; }
         public DateTime FechaHoraModifica { get; set; }
 
-        public Empleado? EmpleadoRef { get; set; } // Reference navigation to dependent
+        public ICollection<Empleado> Empleados { get; } = new List<Empleado>();
 
         // Constructor
         public Departamento()

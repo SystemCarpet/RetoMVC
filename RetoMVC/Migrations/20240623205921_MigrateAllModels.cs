@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace RetoMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class MigrateAllModels : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,8 +59,7 @@ namespace RetoMVC.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_empleados_DepartamentoId",
                 table: "empleados",
-                column: "DepartamentoId",
-                unique: true);
+                column: "DepartamentoId");
         }
 
         /// <inheritdoc />

@@ -12,12 +12,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="DocumentoTipo" class="control-label"></label>
+                <label asp-for="DocumentoTipo" class="control-label">Tipo Documento</label>
                 <input asp-for="DocumentoTipo" class="form-control" />
                 <span asp-validation-for="DocumentoTipo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DocumentoNumero" class="control-label"></label>
+                <label asp-for="DocumentoNumero" class="control-label">Numero</label>
                 <input asp-for="DocumentoNumero" class="form-control" />
                 <span asp-validation-for="DocumentoNumero" class="text-danger"></span>
             </div>
@@ -42,7 +42,7 @@
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CorreoElectronico" class="control-label"></label>
+                <label asp-for="CorreoElectronico" class="control-label">Correo Electronico</label>
                 <input asp-for="CorreoElectronico" class="form-control" />
                 <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
             </div>
@@ -51,9 +51,13 @@
                 <input asp-for="Telefono" class="form-control" />
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
-            
             <div class="form-group">
-                <label asp-for="FechaHoraModifica" class="control-label"></label>
+                <label asp-for="FechaHoraCrea" class="control-label">Fecha Creacion</label>
+                <input asp-for="FechaHoraCrea" class="form-control" readonly/>
+                <span asp-validation-for="FechaHoraCrea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaHoraModifica" class="control-label">Fecha Modificacion</label>
                 <input asp-for="FechaHoraModifica" class="form-control" readonly />
                 <span asp-validation-for="FechaHoraModifica" class="text-danger"></span>
             </div>

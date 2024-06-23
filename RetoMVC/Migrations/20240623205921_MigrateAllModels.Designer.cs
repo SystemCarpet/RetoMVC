@@ -12,8 +12,8 @@ using RetoMVC.Services;
 namespace RetoMVC.Migrations
 {
     [DbContext(typeof(AplicationDB))]
-    [Migration("20240618155925_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20240623205921_MigrateAllModels")]
+    partial class MigrateAllModels
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,8 +99,7 @@ namespace RetoMVC.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartamentoId")
-                        .IsUnique();
+                    b.HasIndex("DepartamentoId");
 
                     b.ToTable("empleados");
                 });
@@ -108,8 +107,8 @@ namespace RetoMVC.Migrations
             modelBuilder.Entity("RetoMVC.Models.Empleado", b =>
                 {
                     b.HasOne("RetoMVC.Models.Departamento", "Departamento")
-                        .WithOne("EmpleadoRef")
-                        .HasForeignKey("RetoMVC.Models.Empleado", "DepartamentoId")
+                        .WithMany("Empleados")
+                        .HasForeignKey("DepartamentoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -118,7 +117,7 @@ namespace RetoMVC.Migrations
 
             modelBuilder.Entity("RetoMVC.Models.Departamento", b =>
                 {
-                    b.Navigation("EmpleadoRef");
+                    b.Navigation("Empleados");
                 });
 #pragma warning restore 612, 618
         }
